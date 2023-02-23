@@ -1,4 +1,5 @@
 function runChatbot() {
+    event.preventDefault();
     const response = document.getElementById('response');
     const answer = document.getElementById('answer').value;
     response.innerText = 'Your name is ' + answer + '.';
@@ -7,9 +8,12 @@ function runChatbot() {
 }
 
 const answerForm = document.getElementById('answerForm');
-
 answerForm.addEventListener("submit", function(event) {
-    event.preventDefault();
+    runChatbot();
+});
+
+const birthdayForm = document.getElementById('birthdayForm');
+birthdayForm.addEventListener("submit", function(event) {
     runChatbot();
 });
 
