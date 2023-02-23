@@ -1,10 +1,22 @@
+var questionNumber = 0;
+
 function runChatbot() {
     event.preventDefault();
     const response = document.getElementById('response');
     const answer = document.getElementById('answer').value;
-    response.innerText = 'Your name is ' + answer + '.';
     const question = document.getElementById('question');
-    question.innerText = "When is your birthday?";
+
+    if (questionNumber === 0) {
+        response.innerText = 'Your name is ' + answer + '.';
+        question.innerText = "When is your birthday?";
+        questionNumber++;
+        document.getElementById("birthdayForm").style.visibility = "visible";
+        document.getElementById("answerForm").style.visibility = "hidden";
+    }
+    else {
+        response.innerText = "Your birthday is recorded.";
+        question.innerText = "What is your favorite holiday?";
+    }
 }
 
 const answerForm = document.getElementById('answerForm');
