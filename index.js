@@ -1,5 +1,26 @@
 var questionNumber = 0;
 
+function calculateHowManyDaysAway(date) {
+    
+    const differenceInMilliseconds = date - new Date();
+
+    const millisecondsInASecond = 1000;
+    const differenceInSeconds = differenceInMilliseconds / millisecondsInASecond;
+
+    const secondsInAMinute = 60;
+    const differenceInMinutes = differenceInSeconds / secondsInAMinute;
+
+    const minutesInAnHour = 60;
+    const differenceInHours = differenceInMinutes / minutesInAnHour;
+
+    const hoursInADay = 24;
+    const differenceInDays = differenceInHours / hoursInADay
+
+    const howManyDaysAwayIsTheDate = differenceInDays ;
+
+    return Math.ceil(howManyDaysAwayIsTheDate);
+}
+
 function calculateNextBirthday() {
     const birthdayYear = new Date().getFullYear();
 
@@ -8,10 +29,10 @@ function calculateNextBirthday() {
 
     const birthdayDay = document.getElementById("birthdayDayAnswer").value;
 
-    const birthYear = document.getElementById("birthdayYearAnswer").value;
-
     const birthdayDate = new Date(birthdayYear + "-" + birthdayMonth + "-" + birthdayDay);
 
+    response.innerText = "Your birthday is " + calculateHowManyDaysAway(birthdayDate) + 
+    " days away!";
 }
 
 function runChatbot() {
@@ -33,7 +54,6 @@ function runChatbot() {
     else {
         calculateNextBirthday();
 
-        response.innerText = "Your birthday is recorded.";
         question.innerText = "What is your favorite holiday?";
     }
 }
