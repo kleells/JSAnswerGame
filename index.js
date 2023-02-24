@@ -1,7 +1,22 @@
 var questionNumber = 0;
 
+function calculateNextBirthday() {
+    const birthdayYear = new Date().getFullYear();
+
+    const selectedBirthdayMonthElement = document.getElementById("months");
+    const birthdayMonth = selectedBirthdayMonthElement.selectedIndex + 1;
+
+    const birthdayDay = document.getElementById("birthdayDayAnswer").value;
+
+    const birthYear = document.getElementById("birthdayYearAnswer").value;
+
+    const birthdayDate = new Date(birthdayYear + "-" + birthdayMonth + "-" + birthdayDay);
+
+}
+
 function runChatbot() {
     event.preventDefault();
+
     const response = document.getElementById('response');
     const answer = document.getElementById('answer').value;
     const question = document.getElementById('question');
@@ -9,11 +24,15 @@ function runChatbot() {
     if (questionNumber === 0) {
         response.innerText = 'Your name is ' + answer + '.';
         question.innerText = "When is your birthday?";
+
         questionNumber++;
+
         document.getElementById("birthdayForm").style.visibility = "visible";
         document.getElementById("answerForm").style.visibility = "hidden";
     }
     else {
+        calculateNextBirthday();
+
         response.innerText = "Your birthday is recorded.";
         question.innerText = "What is your favorite holiday?";
     }
