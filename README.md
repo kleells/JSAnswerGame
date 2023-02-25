@@ -15,6 +15,7 @@ To build and style a HTML file with CSS. Then to add user functionality with Jav
 
 ## How I veered from the original project
 - changed the sentence structure of answers coded in JS file
+- added different holidays that instructor
 - 
 
 ## History
