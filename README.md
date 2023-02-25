@@ -14,6 +14,7 @@ None. Viewer only needs to utilize Live Server through the index.html file.
 To build and style a HTML file with CSS. Then to add user functionality with JavaScript. I also used this project to focus on the structure of my JS file. Trying to create consistent line breaks, use of quotation marks, etc
 
 ## How I veered from the original project
+- changed the sentence structure of answers coded in JS file
 - 
 
 ## History

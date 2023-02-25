@@ -45,6 +45,7 @@ function calculateNextHoliday() {
 
     let month = 0
     let day = 0
+    
     switch (favoriteHoliday) {
         case 'New Years':
             month = 1;
@@ -83,7 +84,11 @@ function calculateNextHoliday() {
             day = 1;
     }
 
-    response.innerText = favoriteHoliday + " is X days away.";
+    const year = new Date().getFullYear();
+    const holidayDate = new Date(year + "-" + month + "-" + day);
+    const howManyDaysAwayIsHoliday = calculateHowManyDaysAway(holidayDate);
+
+    response.innerText = favoriteHoliday + " is " + howManyDaysAwayIsHoliday + " days away.";
 }
 
 function runQandA() {
