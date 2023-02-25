@@ -22,14 +22,18 @@ function calculateHowManyDaysAway(date) {
 }
 
 function calculateNextBirthday() {
-    const birthdayYear = new Date().getFullYear();
+    let birthdayYear = new Date().getFullYear();
 
     const selectedBirthdayMonthElement = document.getElementById("months");
     const birthdayMonth = selectedBirthdayMonthElement.selectedIndex + 1;
 
     const birthdayDay = document.getElementById("birthdayDayAnswer").value;
 
-    const birthdayDate = new Date(birthdayYear + "-" + birthdayMonth + "-" + birthdayDay);
+    let birthdayDate = new Date(birthdayYear + "-" + birthdayMonth + "-" + birthdayDay);
+    if (new Date() > birthdayDate) {
+        birthdayYear = birthdayYear + 1;
+        birthdayDate = new Date(birthdayYear + "-" + birthdayMonth + "-" + birthdayDay);
+    }
 
     response.innerText = "Your birthday is " + calculateHowManyDaysAway(birthdayDate) + 
     " days away!";
