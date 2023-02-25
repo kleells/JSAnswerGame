@@ -8,7 +8,7 @@ A coding tutorial created to review and practice basic JavaScript by creating a 
 - JavaScript
 
 ## Dependencies
-None. Viewer only needs to utilze Live Server through the index.html file.
+None. Viewer only needs to utilize Live Server through the index.html file.
 
 ## Uses
 To build and style a HTML file with CSS. Then to add user functionality with JavaScript. I also used this project to focus on the structure of my JS file. Trying to create consistent line breaks, use of quotation marks, etc
