@@ -41,6 +41,7 @@ function calculateNextBirthday() {
 
 function calculateNextHoliday() {
     const holidays = document.getElementById('holidays');
+    
     const favoriteHoliday = holidays.options[holidays.selectedIndex].value;
 
     let month = 0
@@ -84,8 +85,13 @@ function calculateNextHoliday() {
             day = 1;
     }
 
-    const year = new Date().getFullYear();
-    const holidayDate = new Date(year + "-" + month + "-" + day);
+    let year = new Date().getFullYear();
+    let holidayDate = new Date(year + "-" + month + "-" + day);
+    if (new Date() > holidayDate) {
+        year++;
+        holidayDate = new Date(year + "-" + month + "-" + day)
+    }
+
     const howManyDaysAwayIsHoliday = calculateHowManyDaysAway(holidayDate);
 
     response.innerText = favoriteHoliday + " is " + howManyDaysAwayIsHoliday + " days away.";
@@ -108,6 +114,8 @@ function runQandA() {
     else if (questionNumber === 1) {
         calculateNextBirthday();
         question.innerText = "What is your favorite holiday?";
+        document.getElementById('birthdayForm').style.visibility = 'hidden';
+        document.getElementById('holidayForm').style.visibility = 'visible';
     }
     else if (questionNumber === 2) {
 
