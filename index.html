@@ -37,14 +37,22 @@
                 <option value="November">November</option>
                 <option value="December">December</option>
             </select>
-            
             <label for="birthdayDayAnswer">
                 Day:
             </label>
             <input placeholder="Date" type="number" id="birthdayDayAnswer" value="" max="31">
-            <button type="submit">
-                Submit
-            </button>
+            <button type="submit">Submit</button>
+        </form>
+        <form id="holidayForm">
+            <label for="holidays">Holiday:</label>
+            <select name="holidays" id="holidays">
+                <option value="New Year's">New Year's</option>
+                <option value="Juneteenth">Juneteenth</option>
+                <option value="4th of July">4th of July</option>
+                <option value="Halloween">Halloween</option>
+                <option value="Christmas">Christmas</option>
+            </select>
+            <button type="submit">Submit</button>
         </form>
         <script src="index.js"></script>
     </body>
