@@ -24,10 +24,10 @@ function calculateHowManyDaysAway(date) {
 function calculateNextBirthday() {
     let birthdayYear = new Date().getFullYear();
 
-    const selectedBirthdayMonthElement = document.getElementById("months");
+    const selectedBirthdayMonthElement = document.getElementById('months');
     const birthdayMonth = selectedBirthdayMonthElement.selectedIndex + 1;
 
-    const birthdayDay = document.getElementById("birthdayDayAnswer").value;
+    const birthdayDay = document.getElementById('birthdayDayAnswer').value;
 
     let birthdayDate = new Date(birthdayYear + "-" + birthdayMonth + "-" + birthdayDay);
     if (new Date() > birthdayDate) {
@@ -37,6 +37,53 @@ function calculateNextBirthday() {
 
     response.innerText = "Your birthday is " + calculateHowManyDaysAway(birthdayDate) + 
     " days away!";
+}
+
+function calculateNextHoliday() {
+    const holidays = document.getElementById('holidays');
+    const favoriteHoliday = holidays.options[holidays.selectedIndex].value;
+
+    let month = 0
+    let day = 0
+    switch (favoriteHoliday) {
+        case 'New Years':
+            month = 1;
+            day = 1;
+            break;
+        case 'Juneteenth':
+            month = 6;
+            day = 19;
+            break;
+        case 'Memorial Day':
+            month = 5;
+            day = 29;
+            break;
+        case '4th of July':
+            month = 7;
+            day = 4;
+            break;
+        case 'Labor Day':
+            month = 9;
+            day = 4;
+            break;
+        case 'Halloween':
+            month = 10;
+            day = 31;
+            break;
+        case 'Thanksgiving':
+            month = 11;
+            day = 23;
+            break;
+        case 'Christmas':
+            month = 12;
+            day = 25;
+            break;
+        default:
+            month = 1;
+            day = 1;
+    }
+
+    response.innerText = favoriteHoliday + " is X days away.";
 }
 
 function runQandA() {
@@ -50,34 +97,35 @@ function runQandA() {
         response.innerText = 'Your name is ' + answer + '.';
         question.innerText = "When is your birthday?";
 
-        document.getElementById("birthdayForm").style.visibility = "visible";
-        document.getElementById("answerForm").style.visibility = "hidden";
+        document.getElementById('birthdayForm').style.visibility = 'visible';
+        document.getElementById('answerForm').style.visibility = 'hidden';
     }
     else if (questionNumber === 1) {
         calculateNextBirthday();
         question.innerText = "What is your favorite holiday?";
     }
     else if (questionNumber === 2) {
-        response.innerText = 'That holiday is X days away.';
+
+        calculateNextHoliday();
+
         question.innerText = "How old are you?";
     }
 
     questionNumber++;
-
 }
 
 const answerForm = document.getElementById('answerForm');
-answerForm.addEventListener("submit", function(event) {
+answerForm.addEventListener('submit', function(event) {
     runQandA();
 });
 
 const birthdayForm = document.getElementById('birthdayForm');
-birthdayForm.addEventListener("submit", function(event) {
+birthdayForm.addEventListener('submit', function(event) {
     runQandA();
 });
 
 
 const holidayForm = document.getElementById('holidayForm');
-holidayForm.addEventListener("submit", function(event) {
+holidayForm.addEventListener('submit', function(event) {
     runQandA();
 })
