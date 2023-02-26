@@ -96,34 +96,37 @@ function runQandA() {
 
     const answer = document.getElementById('answer').value;
     const question = document.getElementById('question');
+    const answerForm = document.getElementById('answerForm');
+    const holidayForm = document.getElementById('holidayForm');
+    const birthdayForm = document.getElementById('birthdayForm');
 
     if (questionNumber === -1) {
         question.innerText = "What is your name?";
         response.innerText = "";
 
-        document.getElementById('answerForm').style.visibility = 'visible';
-        document.getElementById('birthdayForm').style.visibility = 'hidden';
-        document.getElementById('holidayForm').style.visibility = 'hidden';
+        answerForm.style.visibility = 'visible';
+        birthdayForm.style.visibility = 'hidden';
+        holidayForm.style.visibility = 'hidden';
 
     }
     else if (questionNumber === 0) {
         response.innerText = 'Your name is ' + answer + '.';
         question.innerText = "When is your birthday?";
 
-        document.getElementById('birthdayForm').style.visibility = 'visible';
-        document.getElementById('answerForm').style.visibility = 'hidden';
+        birthdayForm.style.visibility = 'visible';
+        answerForm.style.visibility = 'hidden';
     }
     else if (questionNumber === 1) {
         calculateNextBirthday();
         question.innerText = "What is your favorite holiday?";
-        document.getElementById('birthdayForm').style.visibility = 'hidden';
-        document.getElementById('holidayForm').style.visibility = 'visible';
+        birthdayForm.style.visibility = 'hidden';
+        holidayForm.style.visibility = 'visible';
     }
     else if (questionNumber === 2) {
         calculateNextHoliday();
         question.innerText = "How old are you?";
-        document.getElementById('holidayForm').style.visibility = 'hidden';
-        document.getElementById('answerForm').style.visibility = 'visible';
+        holidayForm.style.visibility = 'hidden';
+        answerForm.style.visibility = 'visible';
 
     }
     else if (questionNumber === 3) {
@@ -131,7 +134,7 @@ function runQandA() {
         response.innerText = "You were born in " + yearOfBirth + ".";
 
         question.innerText = "Thanks for chatting!";
-        document.getElementById('answerForm').style.visibility = 'hidden';
+        answerForm.style.visibility = 'hidden';
     }
 
     questionNumber++;
