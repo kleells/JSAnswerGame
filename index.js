@@ -111,12 +111,18 @@ function runQandA() {
         document.getElementById('holidayForm').style.visibility = 'visible';
     }
     else if (questionNumber === 2) {
-
         calculateNextHoliday();
         question.innerText = "How old are you?";
         document.getElementById('holidayForm').style.visibility = 'hidden';
         document.getElementById('answerForm').style.visibility = 'visible';
 
+    }
+    else if (questionNumber === 3) {
+        const yearOfBirth = new Date().getFullYear() - answer;
+        response.innerText = "You were born in " + yearOfBirth + ".";
+
+        question.innerText = "Thanks for chatting!";
+        document.getElementById('answerForm').style.visibility = 'hidden';
     }
 
     questionNumber++;
