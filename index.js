@@ -1,4 +1,5 @@
 var questionNumber = 0;
+const response = document.getElementById('response')
 
 function calculateHowManyDaysAway(date) {
 // code b/t here and next return statement is converting milliseconds to days
@@ -93,11 +94,19 @@ function calculateNextHoliday() {
 function runQandA() {
     event.preventDefault();
 
-    const response = document.getElementById('response');
     const answer = document.getElementById('answer').value;
     const question = document.getElementById('question');
 
-    if (questionNumber === 0) {
+    if (questionNumber === -1) {
+        question.innerText = "What is your name?";
+        response.innerText = "";
+
+        document.getElementById('answerForm').style.visibility = 'visible';
+        document.getElementById('birthdayForm').style.visibility = 'hidden';
+        document.getElementById('holidayForm').style.visibility = 'hidden';
+
+    }
+    else if (questionNumber === 0) {
         response.innerText = 'Your name is ' + answer + '.';
         question.innerText = "When is your birthday?";
 
@@ -141,5 +150,11 @@ birthdayForm.addEventListener('submit', function(event) {
 
 const holidayForm = document.getElementById('holidayForm');
 holidayForm.addEventListener('submit', function(event) {
+    runQandA();
+})
+
+const restartButton = document.getElementById('restartButton');
+restartButton.addEventListener('click', function (event) {
+    questionNumber = -1;
     runQandA();
 })
