@@ -1,21 +1,16 @@
 var questionNumber = 0;
 
 function calculateHowManyDaysAway(date) {
-    
+// code b/t here and next return statement is converting milliseconds to days
     const differenceInMilliseconds = date - new Date();
-
     const millisecondsInASecond = 1000;
     const differenceInSeconds = differenceInMilliseconds / millisecondsInASecond;
-
     const secondsInAMinute = 60;
     const differenceInMinutes = differenceInSeconds / secondsInAMinute;
-
     const minutesInAnHour = 60;
     const differenceInHours = differenceInMinutes / minutesInAnHour;
-
     const hoursInADay = 24;
     const differenceInDays = differenceInHours / hoursInADay
-
     const howManyDaysAwayIsTheDate = differenceInDays ;
 
     return Math.ceil(howManyDaysAwayIsTheDate);
@@ -24,9 +19,8 @@ function calculateHowManyDaysAway(date) {
 function calculateNextBirthday() {
     let birthdayYear = new Date().getFullYear();
 
-    const selectedBirthdayMonthElement = document.getElementById('months');
-    const birthdayMonth = selectedBirthdayMonthElement.selectedIndex + 1;
-
+    const birthdayMonthElement = document.getElementById('months');
+    const birthdayMonth = birthdayMonthElement.selectedIndex + 1;
     const birthdayDay = document.getElementById('birthdayDayAnswer').value;
 
     let birthdayDate = new Date(birthdayYear + "-" + birthdayMonth + "-" + birthdayDay);
@@ -41,7 +35,6 @@ function calculateNextBirthday() {
 
 function calculateNextHoliday() {
     const holidays = document.getElementById('holidays');
-    
     const favoriteHoliday = holidays.options[holidays.selectedIndex].value;
 
     let month = 0
@@ -92,9 +85,9 @@ function calculateNextHoliday() {
         holidayDate = new Date(year + "-" + month + "-" + day)
     }
 
-    const howManyDaysAwayIsHoliday = calculateHowManyDaysAway(holidayDate);
+    const daysFromHoliday = calculateHowManyDaysAway(holidayDate);
 
-    response.innerText = favoriteHoliday + " is " + howManyDaysAwayIsHoliday + " days away.";
+    response.innerText = favoriteHoliday + " is " + daysFromHoliday + " days away.";
 }
 
 function runQandA() {
@@ -120,8 +113,10 @@ function runQandA() {
     else if (questionNumber === 2) {
 
         calculateNextHoliday();
-
         question.innerText = "How old are you?";
+        document.getElementById('holidayForm').style.visibility = 'hidden';
+        document.getElementById('answerForm').style.visibility = 'visible';
+
     }
 
     questionNumber++;
