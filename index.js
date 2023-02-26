@@ -140,6 +140,7 @@ function runQandA() {
 const answerForm = document.getElementById('answerForm');
 answerForm.addEventListener('submit', function(event) {
     runQandA();
+    document.getElementById('answer').value = "";
 });
 
 const birthdayForm = document.getElementById('birthdayForm');
