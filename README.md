@@ -18,6 +18,7 @@ To build and style a HTML file with CSS. Then to add user functionality with Jav
 - added different holidays that instructor
 - changed some longer const/var/let names
 - Kept the restart option available for entire Q & A session, instead of just at the end
+- made some Bootstrap styling choices that were different from project
 
 ## History
 After completing a Software Engineering certification program and during my job search, I needed to continue to pracitce my skill set in order to maintain it and learn more. I thought that even the most basic projects using the most basic languages was a great place to start.
