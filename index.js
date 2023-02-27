@@ -104,29 +104,29 @@ function runQandA() {
         question.innerText = "What is your name?";
         response.innerText = "";
 
-        answerForm.style.visibility = 'visible';
-        birthdayForm.style.visibility = 'hidden';
-        holidayForm.style.visibility = 'hidden';
+        answerForm.style.display = 'block';
+        birthdayForm.style.display = 'none';
+        holidayForm.style.display = 'none';
 
     }
     else if (questionNumber === 0) {
         response.innerText = 'Your name is ' + answer + '.';
         question.innerText = "When is your birthday?";
 
-        birthdayForm.style.visibility = 'visible';
-        answerForm.style.visibility = 'hidden';
+        birthdayForm.style.display = 'block';
+        answerForm.style.display = 'none';
     }
     else if (questionNumber === 1) {
         calculateNextBirthday();
         question.innerText = "What is your favorite holiday?";
-        birthdayForm.style.visibility = 'hidden';
-        holidayForm.style.visibility = 'visible';
+        birthdayForm.style.display = 'none';
+        holidayForm.style.display = 'block';
     }
     else if (questionNumber === 2) {
         calculateNextHoliday();
         question.innerText = "How old are you?";
-        holidayForm.style.visibility = 'hidden';
-        answerForm.style.visibility = 'visible';
+        holidayForm.style.display = 'none';
+        answerForm.style.display = 'block';
 
     }
     else if (questionNumber === 3) {
@@ -134,7 +134,7 @@ function runQandA() {
         response.innerText = "You were born in " + yearOfBirth + ".";
 
         question.innerText = "Thanks for chatting!";
-        answerForm.style.visibility = 'hidden';
+        answerForm.style.display = 'none';
     }
 
     questionNumber++;
