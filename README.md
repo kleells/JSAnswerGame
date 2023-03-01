@@ -26,4 +26,4 @@ After completing a Software Engineering certification program and during my job 
 
 ![Desktop stipet of HTML file](assests/images/JSGame1.png)
 
-![Mobile stipet of HTML file](assests/images/JSGame1.png)
+![Mobile stipet of HTML file](assests/images/JSGame2png)
