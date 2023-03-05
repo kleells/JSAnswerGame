@@ -24,6 +24,8 @@ Add user functionality with JavaScript to an HTML. A small amount of Bootsrap an
 ## History
 After completing a Software Engineering certification program and during my job search, I needed to continue to pracitce my skill set in order to maintain it and learn more. I thought that even the most basic projects using the most basic languages was a great place to start.
 
+## Screenshot 1
 ![Desktop stipet of HTML file](assests/images/JSGame1.png)
 
-![Mobile stipet of HTML file](assests/images/JSGame2.png)
+## Screenshot 2
+![Desktop stipet of HTML file](assests/images/JSGame2.png)
