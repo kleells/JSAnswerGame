@@ -12,9 +12,11 @@ A coding tutorial created to review and practice basic JavaScript by creating a 
 None. Viewer only needs to utilize Live Server through the index.html file.
 
 ## Uses
-Add user functionality with JavaScript to an HTML. A small amount of Bootsrap and even less CSS were used in this project. I also used this project to focus on the structure of my JS file. Trying to create consistent line breaks, use of quotation marks, etc.
+Add user functionality with JavaScript to an HTML. A small amount of Bootsrap and even less CSS were used in this project. I also used this project to focus on the structure of my JS file. Trying to create consistent line breaks, use of quotation marks, etc. 
 
-## How I veered from the original project
+I also used this to watch a tutorial on VSCode. I learned bout Snippets and would like to learn more about them in the future.
+
+##  How I veered from the original project
 - changed the sentence structure of answers coded in JS file
 - added different holidays that instructor
 - changed some longer const/var/let names

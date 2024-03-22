@@ -2,7 +2,8 @@ var questionNumber = 0;
 const response = document.getElementById('response')
 
 function calculateHowManyDaysAway(date) {
-// code b/t here and next return statement is converting milliseconds to days
+// * code b/t here and next return statement is converting milliseconds to days
+
     const differenceInMilliseconds = date - new Date();
     const millisecondsInASecond = 1000;
     const differenceInSeconds = differenceInMilliseconds / millisecondsInASecond;
@@ -162,3 +163,4 @@ restartButton.addEventListener('click', function (event) {
     questionNumber = -1;
     runQandA();
 })
+
