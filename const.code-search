@@ -1,0 +1,72 @@
+# Query: const
+# ContextLines: 1
+
+28 results - 2 files
+// Use the search function by going to search in sidebar, clicking "Open in editor" and command+S to save a search file in the project 
+
+
+index.js:
+    1  var questionNumber = 0;
+    2: const response = document.getElementById('response')
+    3  
+
+    6  
+    7:     const differenceInMilliseconds = date - new Date();
+    8:     const millisecondsInASecond = 1000;
+    9:     const differenceInSeconds = differenceInMilliseconds / millisecondsInASecond;
+   10:     const secondsInAMinute = 60;
+   11:     const differenceInMinutes = differenceInSeconds / secondsInAMinute;
+   12:     const minutesInAnHour = 60;
+   13:     const differenceInHours = differenceInMinutes / minutesInAnHour;
+   14:     const hoursInADay = 24;
+   15:     const differenceInDays = differenceInHours / hoursInADay
+   16:     const howManyDaysAwayIsTheDate = differenceInDays ;
+   17  
+
+   23  
+   24:     const birthdayMonthElement = document.getElementById('months');
+   25:     const birthdayMonth = birthdayMonthElement.selectedIndex + 1;
+   26:     const birthdayDay = document.getElementById('birthdayDayAnswer').value;
+   27  
+
+   38  function calculateNextHoliday() {
+   39:     const holidays = document.getElementById('holidays');
+   40:     const favoriteHoliday = holidays.options[holidays.selectedIndex].value;
+   41  
+
+   89  
+   90:     const daysFromHoliday = calculateHowManyDaysAway(holidayDate);
+   91  
+
+   97  
+   98:     const answer = document.getElementById('answer').value;
+   99:     const question = document.getElementById('question');
+  100:     const answerForm = document.getElementById('answerForm');
+  101:     const holidayForm = document.getElementById('holidayForm');
+  102:     const birthdayForm = document.getElementById('birthdayForm');
+  103  
+
+  133      else if (questionNumber === 3) {
+  134:         const yearOfBirth = new Date().getFullYear() - answer;
+  135          response.innerText = "You were born in " + yearOfBirth + ".";
+
+  143  
+  144: const answerForm = document.getElementById('answerForm');
+  145  answerForm.addEventListener('submit', function(event) {
+
+  149  
+  150: const birthdayForm = document.getElementById('birthdayForm');
+  151  birthdayForm.addEventListener('submit', function(event) {
+
+  155  
+  156: const holidayForm = document.getElementById('holidayForm');
+  157  holidayForm.addEventListener('submit', function(event) {
+
+  160  
+  161: const restartButton = document.getElementById('restartButton');
+  162  restartButton.addEventListener('click', function (event) {
+
+README.md:
+  21  - added different holidays that instructor
+  22: - changed some longer const/var/let names
+  23  - Kept the restart option available for entire Q & A session, instead of just at the end
